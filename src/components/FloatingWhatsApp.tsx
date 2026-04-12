@@ -34,7 +34,7 @@ export default function FloatingWhatsApp() {
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className=\"flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300\"
+        className="flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
       >
         <motion.div
           animate={{ rotate: [0, 10, -10, 0] }}
@@ -57,7 +57,7 @@ export default function FloatingWhatsApp() {
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className=\"absolute inset-0 bg-primary rounded-full\"
+        className="absolute inset-0 bg-primary rounded-full"
       />
     </motion.div>
   )
