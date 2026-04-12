@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { getWhatsAppLink } from '@/config/whatsapp'
+import { getWhatsAppLink } from '@/config/whatsapp.ts'
 
 export default function FloatingWhatsApp() {
   const [show, setShow] = useState(false)
