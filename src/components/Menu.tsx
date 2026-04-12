@@ -3,7 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import { images } from '@/config/images'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 const products = [
   { name: 'Green Detox', price: '₹180', emoji: '🥒', desc: 'Spinach, cucumber, apple & ginger. A powerful cleanse in every sip.', image: images.menu.juice1, category: 'Detox', tag: 'Bestseller' },
@@ -19,11 +19,43 @@ const categories = ['All', 'Detox', 'Tropical', 'Berry', 'Citrus', 'Summer']
 export default function Menu() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const containerRef = useRef<HTMLDivElement>(null)
   const [activeCategory, setActiveCategory] = useState('All')
+  const [isHovering, setIsHovering] = useState(false)
+  const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   const filteredProducts = activeCategory === 'All'
     ? products
     : products.filter(product => product.category === activeCategory)
+
+  useEffect(() => {
+    if (isHovering || expandedId) return
+
+    const interval = setInterval(() => {
+      if (containerRef.current) {
+        const maxScroll = containerRef.current.scrollWidth - containerRef.current.clientWidth
+        setScrollPosition(prev => {
+          const next = prev + 2
+          return next > maxScroll ? 0 : next
+        })
+      }
+    }, 30)
+
+    return () => clearInterval(interval)
+  }, [isHovering, expandedId])
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollPosition
+    }
+  }, [scrollPosition])
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category)
+    setScrollPosition(0)
+    setExpandedId(null)
+  }
 
   return (
     <section id="menu" ref={ref} className="py-24 bg-background">
@@ -74,7 +106,7 @@ export default function Menu() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap justify-center gap-4 mb-16"
+          className="flex flex-wrap justify-center gap-4 mb-12"
         >
           {categories.map((category, index) => (
             <motion.button
@@ -82,7 +114,7 @@ export default function Menu() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 1 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => handleCategoryChange(category)}
               className={`px-6 py-3 rounded-full font-medium transition-all ${
                 activeCategory === category
                   ? 'bg-primary text-primary-foreground shadow-lg'
@@ -94,61 +126,105 @@ export default function Menu() {
           ))}
         </motion.div>
 
-        {/* Products Grid */}
+        {/* Carousel Container */}
         <motion.div
-          layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
         >
-          {filteredProducts.map((product, index) => (
-            <motion.div
-              key={product.name}
-              layout
-              initial={{ opacity: 0, x: 100 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-              transition={{ duration: 0.8, delay: 1.2 + index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group bg-card border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-            >
-              {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                {/* Emoji and Tag */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                  <span className="text-4xl">{product.emoji}</span>
-                  {product.tag && (
-                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                      {product.tag}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-2 text-foreground">{product.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{product.desc}</p>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-2xl font-bold font-playfair text-primary">{product.price}</span>
-                </div>
-                <a
-                  href={`https://wa.me/919999999999?text=I%20want%20to%20order%20${encodeURIComponent(product.name)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+          <div
+            ref={containerRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth pb-4 [&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-track]:bg-secondary [&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb]:rounded-full"
+            style={{ scrollBehavior: 'smooth' }}
+          >
+            {filteredProducts.map((product, index) => (
+              <motion.div
+                key={`${activeCategory}-${product.name}`}
+                initial={{ opacity: 0, x: 100 }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+                transition={{ duration: 0.8, delay: 1.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className={`flex-shrink-0 transition-all duration-300 cursor-pointer ${
+                  expandedId === product.name 
+                    ? 'w-full sm:w-96 md:w-[500px] lg:w-[600px]' 
+                    : 'w-64 sm:w-72'
+                }`}
+              >
+                <motion.div
+                  onClick={() => setExpandedId(expandedId === product.name ? null : product.name)}
+                  whileHover={{ y: -4 }}
+                  className="group bg-card border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full"
                 >
-                  Order via WhatsApp →
-                </a>
-              </div>
+                  {/* Image */}
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                    {/* Emoji and Tag */}
+                    <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                      <span className="text-4xl">{product.emoji}</span>
+                      {product.tag && (
+                        <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                          {product.tag}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="font-bold text-xl mb-2 text-foreground">{product.name}</h3>
+                    
+                    {expandedId === product.name && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="mb-4"
+                      >
+                        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{product.desc}</p>
+                      </motion.div>
+                    )}
+
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-2xl font-bold font-playfair text-primary">{product.price}</span>
+                    </div>
+
+                    <a
+                      href={`https://wa.me/919999999999?text=I%20want%20to%20order%20${encodeURIComponent(product.name)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+                    >
+                      Order via WhatsApp →
+                    </a>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Scroll Hint */}
+          {!isHovering && filteredProducts.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2 }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
+            >
+              <motion.div animate={{ x: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+                <div className="text-primary text-2xl">→</div>
+              </motion.div>
             </motion.div>
-          ))}
+          )}
         </motion.div>
       </div>
     </section>

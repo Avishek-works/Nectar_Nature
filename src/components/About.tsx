@@ -36,20 +36,20 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute -top-4 -right-4 md:-right-8 bg-card border border-border rounded-2xl p-4 shadow-xl"
+              className="absolute -top-4 -right-4 md:-right-8 bg-primary rounded-2xl p-4 shadow-xl"
             >
-              <div className="text-2xl font-bold font-playfair text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">Organic</div>
+              <div className="text-2xl font-bold font-playfair text-primary-foreground">100%</div>
+              <div className="text-sm text-primary-foreground/80">Organic</div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute -bottom-4 -left-4 md:-left-8 bg-card border border-border rounded-2xl p-4 shadow-xl"
+              className="absolute -bottom-4 -left-4 md:-left-8 bg-primary rounded-2xl p-4 shadow-xl"
             >
-              <div className="text-2xl font-bold font-playfair text-primary">Fresh</div>
-              <div className="text-sm text-muted-foreground">Daily</div>
+              <div className="text-2xl font-bold font-playfair text-primary-foreground">Fresh</div>
+              <div className="text-sm text-primary-foreground/80">Daily</div>
             </motion.div>
           </motion.div>
 

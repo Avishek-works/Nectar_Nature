@@ -120,10 +120,10 @@ export default function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute -bottom-4 -left-4 md:-left-8 bg-card border border-border rounded-2xl p-4 shadow-xl"
+              className="absolute -bottom-4 -left-4 md:-left-8 bg-primary rounded-2xl p-4 shadow-xl"
             >
-              <div className="text-primary font-semibold font-playfair">🌿 Baner, Pune</div>
-              <div className="text-sm text-muted-foreground">Freshly made daily</div>
+              <div className="text-primary-foreground font-semibold font-playfair">🌿 Baner, Pune</div>
+              <div className="text-sm text-primary-foreground/80">Freshly made daily</div>
             </motion.div>
           </motion.div>
         </div>

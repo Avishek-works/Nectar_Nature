@@ -42,8 +42,8 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--foreground))",
         },
-        green: '#10B981',
-        'primary-green': '#10B981',
+        green: '#2D764B',
+        'primary-green': '#2D764B',
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
