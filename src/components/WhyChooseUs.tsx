@@ -1,10 +1,10 @@
 'use client'
 
 const reasons = [
-  { icon: '�', title: 'Fresh Daily', desc: 'Made fresh every morning' },
-  { icon: '🚫', title: 'No Preservatives', desc: '100% natural ingredients' },
-  { icon: '🚚', title: 'Doorstep Delivery', desc: 'Delivered to your doorstep' },
-  { icon: '⚙️', title: 'Customizable', desc: 'Choose your favorites' },
+  { icon: '🍯', title: 'No Sugar Added', desc: 'Pure fruit sweetness only. Zero refined sugar, zero artificial sweeteners.' },
+  { icon: '⏱️', title: 'Freshly Made', desc: 'Every juice is prepared the moment you order. Nothing pre-made, ever.' },
+  { icon: '🏥', title: '100% Hygienic', desc: 'FSSAI compliant. Sanitized equipment, clean environment, every single day.' },
+  { icon: '🌾', title: 'Premium Ingredients', desc: 'Hand-picked, seasonal produce sourced from trusted organic farms.' },
 ]
 
 export default function WhyChooseUs() {
@@ -12,13 +12,13 @@ export default function WhyChooseUs() {
     <section id="why" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm uppercase tracking-[0.35em] text-primary-green mb-4 fade-in">
-          Why Choose Us
+          Why Nectar & Nature
         </p>
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-3 fade-in-delay">
-          Pure Health, Pure Joy
+          The Difference You Can Taste
         </h2>
         <p className="text-center text-gray-600 mb-16 text-lg fade-in-delay-2">
-          Experience the difference that pure, natural nutrition makes.
+          What sets Nectar & Nature apart from the rest.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {reasons.map((reason, index) => (

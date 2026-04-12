@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40 flex items-center justify-center px-4">
         <div className="text-center text-white max-w-3xl fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 drop-shadow-2xl">
-            Pure Juice. [UPDATED]
+            Pure Juice.
           </h1>
           <h2 className="text-2xl md:text-4xl font-bold mb-8 drop-shadow-lg text-green-200">
             Nothing Else.

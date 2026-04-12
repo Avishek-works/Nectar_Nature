@@ -18,35 +18,35 @@ export default function Contact() {
         </p>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="fade-in">
-            <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
+            <h3 className="text-2xl font-bold mb-8">Quick Inquiry</h3>
             <div className="space-y-6">
+              <div className="flex items-center space-x-4">
+                <div className="text-3xl">�</div>
+                <div>
+                  <p className="font-semibold text-gray-900">Visit Us</p>
+                  <p className="text-gray-700">Baner, Pune</p>
+                </div>
+              </div>
               <div className="flex items-center space-x-4">
                 <div className="text-3xl">📞</div>
                 <div>
-                  <p className="font-semibold text-gray-900">Phone</p>
+                  <p className="font-semibold text-gray-900">Call Us</p>
                   <a href="tel:+919999999999" className="text-primary-green hover:underline">
                     +91 99999 99999
                   </a>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
-                <div className="text-3xl">✉️</div>
+                <div className="text-3xl">💬</div>
                 <div>
-                  <p className="font-semibold text-gray-900">Email</p>
-                  <a href="mailto:hello@nectarandnature.com" className="text-primary-green hover:underline">
-                    hello@nectarandnature.com
+                  <p className="font-semibold text-gray-900">WhatsApp</p>
+                  <a href="https://wa.me/919999999999" className="text-primary-green hover:underline">
+                    Chat with us
                   </a>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="text-3xl">📍</div>
-                <div>
-                  <p className="font-semibold text-gray-900">Location</p>
-                  <p className="text-gray-700">Delhi NCR</p>
-                </div>
-              </div>
-              <a href="https://wa.me/919999999999?text=Hi%20Nectar%20%26%20Nature%2C%20I%20have%20a%20question" className="mt-8 w-full bg-primary-green text-white py-4 px-8 rounded-xl font-semibold hover:bg-green-600 transition text-center block hover-scale">
-                Message on WhatsApp
+              <a href="https://wa.me/919999999999?text=Hi%2C%20I%20have%20a%20question%20about%20Nectar%20%26%20Nature" className="mt-8 w-full bg-primary-green text-white py-4 px-8 rounded-xl font-semibold hover:bg-green-600 transition text-center block hover-scale">
+                Send via WhatsApp
               </a>
             </div>
           </div>

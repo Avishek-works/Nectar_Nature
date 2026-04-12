@@ -2,27 +2,27 @@
 
 const plans = [
   {
-    name: 'Daily Plan',
-    price: '₹180',
-    period: '/day',
-    items: '1 Juice + 1 Salad',
-    features: ['Fresh Daily', 'Doorstep Delivery', 'Customizable', 'No Preservatives'],
+    name: '6 Day',
+    subtitle: 'Starter Cleanse',
+    price: '₹999',
+    period: '/ 6 days',
+    features: ['1 fresh juice daily', 'Choose from 5+ options', 'Free delivery', 'Pause anytime'],
     popular: false
   },
   {
-    name: 'Weekly Plan',
-    price: '₹1200',
-    period: '/week',
-    items: '7 Juices + 7 Salads',
-    features: ['Fresh Daily', 'Doorstep Delivery', 'Customizable', 'No Preservatives'],
+    name: '15 Day',
+    subtitle: 'Health Reset',
+    price: '₹2,199',
+    period: '/ 15 days',
+    features: ['1 fresh juice daily', 'Choose from all options', 'Free delivery', 'Weekly menu change', 'Priority support'],
     popular: true
   },
   {
-    name: 'Monthly Plan',
-    price: '₹4800',
-    period: '/month',
-    items: '30 Juices + 30 Salads',
-    features: ['Fresh Daily', 'Doorstep Delivery', 'Customizable', 'No Preservatives'],
+    name: '30 Day',
+    subtitle: 'Total Transformation',
+    price: '₹3,999',
+    period: '/ 30 days',
+    features: ['1 fresh juice daily', 'Full menu access', 'Free delivery', 'Weekly menu change', 'Priority support', '2 free salads/month'],
     popular: false
   }
 ]
@@ -38,7 +38,7 @@ export default function Plans() {
           Choose Your Journey
         </h2>
         <p className="text-center text-gray-600 mb-16 text-lg fade-in-delay-2">
-          Flexible plans designed to fit your lifestyle and health goals.
+          Subscribe and never miss a day of fresh, pure nutrition. Cancel or pause anytime.
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
@@ -49,11 +49,11 @@ export default function Plans() {
                 </div>
               )}
               <h3 className="text-2xl font-bold text-center mb-2">{plan.name}</h3>
+              <p className="text-center text-primary-green font-semibold mb-4">{plan.subtitle}</p>
               <div className="text-center mb-4">
                 <span className="text-4xl font-bold text-primary-green">{plan.price}</span>
                 <span className="text-gray-600">{plan.period}</span>
               </div>
-              <p className="text-center text-gray-600 mb-6">{plan.items}</p>
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center">
@@ -63,7 +63,7 @@ export default function Plans() {
                 ))}
               </ul>
               <a href="https://wa.me/919999999999?text=I%20want%20to%20subscribe%20to%20the%20" className={`w-full py-3 rounded-xl font-semibold transition text-center inline-block ${plan.popular ? 'bg-primary-green text-white hover:bg-green-600' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'}`}>
-                Get Started
+                Start Subscription
               </a>
             </div>
           ))}
