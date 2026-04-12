@@ -37,7 +37,10 @@ export default function Menu() {
         const maxScroll = containerRef.current.scrollWidth - containerRef.current.clientWidth
         setScrollPosition(prev => {
           const next = prev + 2
-          return next > maxScroll ? 0 : next
+          if (next >= maxScroll - 10) {
+            return maxScroll
+          }
+          return next
         })
       }
     }, 30)

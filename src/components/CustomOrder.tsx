@@ -2,7 +2,6 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { MessageCircle } from 'lucide-react'
 
 const menuItems = [
   { id: 'juice1', name: 'Green Detox', price: 180, emoji: '🥒' },
@@ -261,13 +260,15 @@ export default function CustomOrder() {
                   whileHover={{ scale: selectedItems.length > 0 && name && phone ? 1.02 : 1 }}
                   whileTap={{ scale: selectedItems.length > 0 && name && phone ? 0.98 : 1 }}
                   onClick={handleSubmit}
-                  className={`w-full py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all ${
+                  className={`w-full py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 transition-all ${
                     selectedItems.length > 0 && name && phone
-                      ? 'bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer'
+                      ? 'bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer shadow-lg hover:shadow-xl'
                       : 'bg-secondary text-muted-foreground cursor-not-allowed opacity-50'
                   }`}
                 >
-                  <MessageCircle size={20} />
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.006a9.87 9.87 0 00-5.031 1.378c-3.055 2.116-4.922 5.636-4.922 9.228 0 1.141.264 2.253.754 3.312l-1.35 4.861 5.119-1.377c.984.292 1.961.445 2.959.456h.006c5.364 0 9.814-4.424 9.814-9.844 0-2.68-1.186-5.192-3.22-7.055-2.022-1.848-4.66-2.559-7.252-2.559"/>
+                  </svg>
                   Order via WhatsApp
                 </motion.button>
               </div>

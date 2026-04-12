@@ -86,10 +86,10 @@ export default function Plans() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.8 + index * 0.2, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -8 }}
-              className={`relative bg-card border border-border rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 ${
-                plan.popular ? 'ring-2 ring-primary shadow-primary/40 hover:ring-primary hover:shadow-primary/50' : 'hover:border-primary/50'
+              className={`relative bg-card border-2 rounded-3xl p-8 shadow-lg transition-all duration-300 group hover:shadow-2xl ${
+                plan.popular ? 'border-primary shadow-primary/30' : 'border-border hover:border-primary'
               }`}
+              whileHover={{ y: -4 }}
             >
               {/* Popular Badge */}
               {plan.popular && (

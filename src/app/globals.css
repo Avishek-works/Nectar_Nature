@@ -8,7 +8,7 @@
   :root {
     --background: hsl(60, 20%, 98%);
     --foreground: hsl(150, 10%, 15%);
-    --primary: hsl(145, 45%, 32%);
+    --primary: 45 118 75;
     --primary-foreground: hsl(60, 20%, 98%);
     --secondary: hsl(80, 25%, 92%);
     --muted-foreground: hsl(150, 5%, 45%);
