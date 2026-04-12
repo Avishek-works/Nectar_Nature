@@ -6,23 +6,21 @@
 
 @layer base {
   :root {
-    /* Background & Text */
-    --background: 60 20% 98%;
-    --foreground: 150 10% 15%;
+    --background: hsl(60, 20%, 98%);
+    --foreground: hsl(150, 10%, 15%);
 
-    /* ✅ BRAND GREEN (FIXED) */
-    --primary: 146 45% 32%; /* #2D764B */
+    /* ✅ YOUR BRAND GREEN (FIXED) */
+    --primary: 146 45% 32%;
     --primary-foreground: 0 0% 100%;
 
-    /* Supporting Colors */
-    --secondary: 80 25% 92%;
-    --muted-foreground: 150 5% 45%;
+    --secondary: hsl(80, 25%, 92%);
+    --muted-foreground: hsl(150, 5%, 45%);
 
-    --accent: 35 80% 55%;
-    --accent-foreground: 60 20% 98%;
+    --accent: hsl(35, 80%, 55%);
+    --accent-foreground: hsl(60, 20%, 98%);
 
-    --border: 60 10% 88%;
-    --card: 60 15% 97%;
+    --border: hsl(60, 10%, 88%);
+    --card: hsl(60, 15%, 97%);
 
     --radius: 0.75rem;
   }
@@ -32,18 +30,12 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-background text-foreground font-inter;
     font-family: var(--font-inter), sans-serif;
-    scroll-behavior: smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair), serif;
-  }
-
-  ::selection {
-    background-color: hsl(var(--primary) / 0.3);
-    color: hsl(var(--foreground));
   }
 }
 
@@ -87,7 +79,6 @@
   }
 }
 
-/* Animations */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -105,4 +96,15 @@
 .fade-in-scroll.animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background-color: hsl(146 45% 32% / 0.3);
+  color: hsl(150, 10%, 15%);
 }
