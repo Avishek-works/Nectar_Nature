@@ -205,7 +205,7 @@ export default function Menu() {
                       href={`https://wa.me/919999999999?text=I%20want%20to%20order%20${encodeURIComponent(product.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+                      className="w-full inline-flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg"
                     >
                       Order via WhatsApp →
                     </a>

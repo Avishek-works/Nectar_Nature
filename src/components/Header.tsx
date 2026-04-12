@@ -42,7 +42,7 @@ export default function Header() {
             className="flex items-center gap-2 text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
           >
             <Leaf className="w-6 h-6 text-primary" />
-            <span className="font-playfair">Nectar & Nature</span>
+            <span className="font-playfair text-primary">Nectar & Nature</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -51,7 +51,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm text-primary font-medium hover:opacity-70 transition-opacity"
               >
                 {link.label}
               </a>

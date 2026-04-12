@@ -262,7 +262,7 @@ export default function CustomOrder() {
                   onClick={handleSubmit}
                   className={`w-full py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 transition-all ${
                     selectedItems.length > 0 && name && phone
-                      ? 'bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer shadow-lg hover:shadow-xl'
+                      ? 'bg-primary text-white hover:bg-primary/90 cursor-pointer shadow-lg hover:shadow-xl'
                       : 'bg-secondary text-muted-foreground cursor-not-allowed opacity-50'
                   }`}
                 >
