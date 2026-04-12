@@ -89,11 +89,10 @@
   opacity: 1;
   transform: translateY(0);
 }
-  scroll-behavior: smooth;
-}
 
 body {
   @apply bg-slate-50 text-slate-900 antialiased;
+  scroll-behavior: smooth;
 }
 
 ::selection {
