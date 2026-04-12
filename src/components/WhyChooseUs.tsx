@@ -9,8 +9,11 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-white">
+    <section id="why" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-sm uppercase tracking-[0.35em] text-primary-green mb-4">
+          Why Nectar & Nature
+        </p>
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-3">
           The Difference You Can Taste
         </h2>
