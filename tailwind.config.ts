@@ -43,6 +43,7 @@ const config: Config = {
           foreground: "hsl(var(--foreground))",
         },
         green: '#10B981',
+        'primary-green': '#10B981',
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
