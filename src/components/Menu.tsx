@@ -4,18 +4,21 @@ import Image from 'next/image'
 import { images } from '@/config/images'
 
 const products = [
-  { name: 'Green Detox', price: '₹180', emoji: '🥬', desc: 'Spinach, cucumber, apple & ginger. A powerful cleanse in every sip.', image: images.menu.juice1 },
-  { name: 'Orange Press', price: '₹140', emoji: '🍊', desc: 'Fresh-pressed seasonal oranges. Pure vitamin C.', image: images.menu.juice2 },
-  { name: 'Berry Bliss', price: '₹200', emoji: '🫐', desc: 'Mixed berries with pomegranate. Antioxidant powerhouse.', image: images.menu.juice3 },
-  { name: 'Tropical Sunrise', price: '₹160', emoji: '🥭', desc: 'Mango, pineapple & passion fruit. Pure sunshine, bottled.', image: images.menu.juice1 },
-  { name: 'Watermelon Mint', price: '₹150', emoji: '🍉', desc: 'Fresh watermelon with spearmint. Summer in a glass.', image: images.menu.juice2 },
-  { name: 'Pink Lemonade', price: '₹170', emoji: '🍋', desc: 'Strawberry, lemon & a touch of basil. Refreshingly unique.', image: images.menu.juice3 },
+  { name: 'Green Detox Juice', price: '₹180', emoji: '🥬', desc: 'Spinach, cucumber, apple & ginger. Cleanse your system with fresh greens.', image: images.menu.juice1 },
+  { name: 'Mango Mint Press', price: '₹160', emoji: '🥭', desc: 'Fresh mango blended with mint and lemon for a refreshing Indian summer drink.', image: images.menu.juice2 },
+  { name: 'Beetroot Energy', price: '₹190', emoji: '🧃', desc: 'Beetroot, carrot and ginger for immunity and natural energy.', image: images.menu.juice3 },
+  { name: 'Kale Caesar Salad', price: '₹260', emoji: '🥗', desc: 'Crisp greens, cherry tomatoes, parmesan and herb dressing.', image: images.menu.salad1 },
+  { name: 'Quinoa Power Bowl', price: '₹320', emoji: '🍚', desc: 'Quinoa, avocado, sprouts and seeds with fresh seasonal vegetables.', image: images.menu.salad2 },
+  { name: 'Seasonal Fruit Bowl', price: '₹150', emoji: '🍓', desc: 'Fresh seasonal fruits with mint and citrus drizzle for a light meal.', image: images.menu.bowl1 },
 ]
 
 export default function Menu() {
   return (
-    <section className="py-20 bg-white">
+    <section id="menu" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-sm uppercase tracking-[0.35em] text-primary-green mb-4">
+          Our Menu
+        </p>
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-3">
           Crafted for Your Body
         </h2>

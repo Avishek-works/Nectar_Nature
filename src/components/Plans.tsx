@@ -10,10 +10,15 @@ export default function Plans() {
   return (
     <section id="plans" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-sm uppercase tracking-[0.35em] text-primary-green mb-4">
+          Subscription Plans
+        </p>
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-3">
           Your Daily Dose of Health
         </h2>
-        <p className="text-center text-gray-600 mb-16 text-lg\">\n          Subscribe and never miss a day of fresh, pure nutrition. Cancel or pause anytime.\n        </p>
+        <p className="text-center text-gray-600 mb-16 text-lg">
+          Subscribe and never miss a day of fresh, pure nutrition. Cancel or pause anytime.
+        </p>
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <div key={index} className={`relative rounded-2xl p-8 transition-all ${plan.popular ? 'border-2 border-primary-green shadow-2xl scale-105' : 'border border-gray-200 hover:shadow-xl'} bg-gradient-to-b from-white to-gray-50`}>

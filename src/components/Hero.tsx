@@ -5,16 +5,17 @@ import { images } from '@/config/images'
 
 export default function Hero() {
   return (
-    <section className="relative w-full">
-      <Image
-        src={images.hero}
-        alt="Fresh green juice hero"
-        width={1470}
-        height={800}
-        priority
-        className="image-hero"
-      />
-      <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <section id="home" className="relative w-full overflow-hidden">
+      <div className="relative h-[520px] md:h-[640px]">
+        <Image
+          src={images.hero}
+          alt="Fresh green juice hero"
+          fill
+          priority
+          className="image-hero"
+        />
+      </div>
+      <div className="absolute inset-0 bg-black/40 flex items-center justify-center px-4">
         <div className="text-center text-white max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 drop-shadow-2xl">
             Pure Juice.

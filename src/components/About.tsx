@@ -5,10 +5,13 @@ import { images } from '@/config/images'
 
 export default function About() {
   return (
-    <section className="py-20 bg-gradient-to-r from-green-50 to-emerald-50">
+    <section id="about" className="py-20 bg-gradient-to-r from-green-50 to-emerald-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
+            <span className="inline-block text-sm uppercase tracking-[0.35em] text-primary-green mb-4">
+              Our Story
+            </span>
             <h2 className="text-4xl font-bold text-gray-900 mb-3">
               More Than Juice.
             </h2>
