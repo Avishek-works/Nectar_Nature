@@ -9,10 +9,11 @@ import Menu from '@/components/Menu'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import Plans from '@/components/Plans'
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.12),_rgba(240,249,235,1))] text-slate-900">
+    <main className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
       <About />
@@ -20,6 +21,7 @@ export default function Home() {
       <WhyChooseUs />
       <Plans />
       <Contact />
+      <Footer />
     </main>
   )
 }

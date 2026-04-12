@@ -1,6 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: hsl(60, 20%, 98%);
+    --foreground: hsl(150, 10%, 15%);
+    --primary: hsl(145, 45%, 32%);
+    --primary-foreground: hsl(60, 20%, 98%);
+    --secondary: hsl(80, 25%, 92%);
+    --muted-foreground: hsl(150, 5%, 45%);
+    --accent: hsl(35, 80%, 55%);
+    --accent-foreground: hsl(60, 20%, 98%);
+    --border: hsl(60, 10%, 88%);
+    --card: hsl(60, 15%, 97%);
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), serif;
+  }
+}
 
 @layer components {
   .image-hero {
@@ -58,8 +89,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-html {
   scroll-behavior: smooth;
 }
 
