@@ -24,9 +24,9 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-6"
+            className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider mb-6 shadow-md"
           >
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
             Get in Touch
           </motion.div>
 
@@ -135,7 +135,7 @@ export default function Contact() {
                 href="https://wa.me/919999999999?text=Hi%2C%20I%20have%20a%20question%20about%20Nectar%20%26%20Nature"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 w-full bg-primary text-white py-4 rounded-xl font-semibold hover:bg-primary/90 transition-colors shadow-md"
               >
                 Send via WhatsApp →
               </a>

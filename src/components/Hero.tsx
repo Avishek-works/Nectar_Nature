@@ -18,9 +18,9 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider"
+              className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider shadow-md"
             >
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
               Fresh & Organic
             </motion.div>
 
@@ -61,7 +61,7 @@ export default function Hero() {
                 href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20from%20Nectar%20%26%20Nature"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-white font-semibold hover:bg-primary/90 transition-colors shadow-md"
               >
                 Order Now →
               </a>

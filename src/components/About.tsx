@@ -65,9 +65,9 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider"
+              className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider shadow-md"
             >
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
               Our Story
             </motion.div>
 
@@ -114,7 +114,7 @@ export default function About() {
                 href="https://wa.me/919999999999?text=Tell%20me%20more%20about%20Nectar%20%26%20Nature"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-white font-semibold hover:bg-primary/90 transition-colors shadow-md"
               >
                 Learn More →
               </a>

@@ -26,12 +26,10 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      initial={{ backgroundColor: 'transparent' }}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-primary"
+      initial={{ opacity: 1 }}
       animate={{
-        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
-        backdropFilter: isScrolled ? 'blur(12px)' : 'none',
-        boxShadow: isScrolled ? '0 1px 3px 0 rgb(0 0 0 / 0.1)' : 'none',
+        boxShadow: isScrolled ? '0 4px 12px 0 rgb(45 118 75 / 0.2)' : 'none',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,10 +37,10 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#hero"
-            className="flex items-center gap-2 text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 text-white font-semibold text-lg hover:opacity-80 transition-opacity"
           >
-            <Leaf className="w-6 h-6 text-primary" />
-            <span className="font-playfair text-primary">Nectar & Nature</span>
+            <Leaf className="w-6 h-6 text-white" />
+            <span className="font-playfair text-white">Nectar & Nature</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -51,7 +49,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-primary font-medium hover:opacity-70 transition-opacity"
+                className="text-sm text-white font-medium hover:opacity-70 transition-opacity"
               >
                 {link.label}
               </a>
@@ -63,7 +61,7 @@ export default function Header() {
             href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20from%20Nectar%20%26%20Nature"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+            className="hidden md:inline-flex items-center justify-center rounded-full bg-white text-primary px-6 py-3 font-semibold hover:bg-white/90 transition-colors shadow-md"
           >
             Order Now
           </a>
@@ -71,12 +69,12 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-secondary/50 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-white/20 transition-colors"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
         </div>
@@ -108,7 +106,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center rounded-full bg-primary px-6 py-3 text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                className="block w-full text-center rounded-full bg-primary px-6 py-3 text-white font-semibold hover:bg-primary/90 transition-colors\"
               >
                 Order Now
               </a>
