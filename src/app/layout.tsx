@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import '@/*'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Juice Website - Fresh & Healthy',
-  description: 'Premium fresh juice delivery',
+  title: 'Nectar & Nature | Fresh Indian Juices & Salads',
+  description: 'Healthy fresh juices, salads and subscription plans delivered in Pune.',
 }
 
 export default function RootLayout({

@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .image-hero {
+    @apply object-cover;
+  }
+  .image-section {
+    @apply rounded-xl shadow-lg w-full h-64 md:h-80 object-cover;
+  }
+  .image-card {
+    @apply rounded-lg shadow-md w-full h-48 object-cover;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .fade-in-delay {
+    animation-delay: 0.2s;
+  }
+
+  .fade-in-delay-2 {
+    animation-delay: 0.4s;
+  }
+
+  .fade-in-delay-3 {
+    animation-delay: 0.6s;
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll-triggered animations */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+::selection {
+  @apply bg-primary-green/30 text-slate-900;
+}
