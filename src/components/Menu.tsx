@@ -103,10 +103,11 @@ export default function Menu() {
             <motion.div
               key={product.name}
               layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 1.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="group bg-card border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              initial={{ opacity: 0, x: 100 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+              transition={{ duration: 0.8, delay: 1.2 + index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group bg-card border border-border rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">

@@ -32,9 +32,9 @@ export default function Hero() {
               className="space-y-2"
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05]">
-                <span className="text-foreground">Pure Juice.</span>
+                <span className="text-foreground">Fresh & Healthy</span>
                 <br />
-                <span className="text-primary">Nothing Else.</span>
+                <span className="text-primary">For Your Wellness.</span>
               </h1>
             </motion.div>
 
@@ -45,9 +45,9 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg md:text-xl text-muted-foreground"
             >
-              No Sugar. No Water. No Ice.
+              Pure cold-pressed juices, nourishing salads, and healthy snacks
               <br />
-              Made Fresh When You Order.
+              100% Organic. Made Fresh When You Order.
             </motion.p>
 
             {/* CTA Buttons */}
