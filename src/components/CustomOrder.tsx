@@ -46,17 +46,13 @@ export default function CustomOrder() {
     return sum + (item?.price || 0) * (quantity[id] || 1)
   }, 0)
 
-  // ✅ FIXED: Button enable logic
   const isButtonEnabled =
     name.trim().length > 0 &&
     /^\d{10}$/.test(phone) &&
     selectedItems.length > 0
 
   const submit = () => {
-    if (!isButtonEnabled) {
-      alert('Please complete the form correctly')
-      return
-    }
+    if (!isButtonEnabled) return alert('Please complete the form')
 
     const items = selectedItems
       .map(id => {
@@ -73,108 +69,39 @@ export default function CustomOrder() {
   }
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-b from-background to-muted">
+    <section id="menu" ref={ref} className="py-24 bg-gradient-to-b from-background to-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold uppercase mb-6 shadow-md">
-            <div className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse" />
-            Build Order
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Your Perfect Combo
-          </h2>
-
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Mix & match fresh juices!
-          </p>
-        </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
+
           {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            className="lg:col-span-2"
-          >
+          <div className="lg:col-span-2">
             <div className="bg-card border rounded-3xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold mb-6">Choose Items</h3>
 
-              <div className="grid sm:grid-cols-2 gap-4 max-h-96 overflow-auto">
-                {menuItems.map((item, i) => (
-                  <motion.div
+              <div className="grid sm:grid-cols-2 gap-4">
+                {menuItems.map(item => (
+                  <div
                     key={item.id}
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : {}}
-                    transition={{ delay: 0.05 * i }}
                     onClick={() => toggleItem(item.id)}
-                    className={`p-6 rounded-2xl border-2 cursor-pointer transition-all ${
+                    className={`p-6 rounded-2xl border-2 cursor-pointer ${
                       selectedItems.includes(item.id)
-                        ? 'border-primary bg-primary/5 shadow-xl'
-                        : 'border-border hover:border-primary hover:bg-primary/5'
+                        ? 'border-primary bg-primary/5'
+                        : 'border-border hover:border-primary'
                     }`}
                   >
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-3xl">{item.emoji}</span>
-                          <h4 className="font-semibold text-lg">
-                            {item.name}
-                          </h4>
-                        </div>
-                        <p className="font-bold text-primary">₹{item.price}</p>
-                      </div>
-
-                      {selectedItems.includes(item.id) && (
-                        <div className="w-7 h-7 bg-primary rounded-full flex items-center justify-center">
-                          ✓
-                        </div>
-                      )}
-                    </div>
-
-                    {selectedItems.includes(item.id) && (
-                      <div className="mt-4 flex items-center gap-3">
-                        <button
-                          onClick={e => {
-                            e.stopPropagation()
-                            const q = quantity[item.id] || 1
-                            if (q > 1) updateQuantity(item.id, q - 1)
-                          }}
-                          className="w-10 h-10 rounded-xl bg-primary/20"
-                        >
-                          −
-                        </button>
-
-                        <span>{quantity[item.id] || 1}</span>
-
-                        <button
-                          onClick={e => {
-                            e.stopPropagation()
-                            updateQuantity(
-                              item.id,
-                              (quantity[item.id] || 1) + 1
-                            )
-                          }}
-                          className="w-10 h-10 rounded-xl bg-primary/20"
-                        >
-                          +
-                        </button>
-                      </div>
-                    )}
-                  </motion.div>
+                    <h4>{item.name}</h4>
+                    <p>₹{item.price}</p>
+                  </div>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* RIGHT */}
           <div>
-            <div className="bg-card border rounded-3xl p-6 shadow-xl">
-              <h3 className="text-xl font-bold mb-6">Summary</h3>
+            <div className="bg-card border rounded-3xl p-6 shadow-xl mb-4">
+              <h3 className="text-xl font-bold mb-4">Summary</h3>
 
               {selectedItems.length === 0 ? (
                 <p>No items selected</p>
@@ -184,24 +111,19 @@ export default function CustomOrder() {
                   const q = quantity[id] || 1
 
                   return (
-                    <div key={id} className="flex justify-between mb-2">
-                      <span>
-                        {item?.name} ×{q}
-                      </span>
+                    <div key={id} className="flex justify-between">
+                      <span>{item?.name} ×{q}</span>
                       <span>₹{(item?.price || 0) * q}</span>
                     </div>
                   )
                 })
               )}
 
-              <div className="mt-4 font-bold">Total: ₹{total}</div>
+              <div className="mt-3 font-bold">Total: ₹{total}</div>
             </div>
 
-            <div className="bg-card border rounded-3xl p-6 shadow-xl mt-6">
-              <h3 className="text-xl font-bold mb-4">Contact</h3>
-
+            <div className="bg-card border rounded-3xl p-6 shadow-xl">
               <input
-                type="text"
                 placeholder="Name"
                 value={name}
                 onChange={e => setName(e.target.value)}
@@ -209,7 +131,6 @@ export default function CustomOrder() {
               />
 
               <input
-                type="tel"
                 placeholder="Phone"
                 value={phone}
                 onChange={e =>
@@ -227,9 +148,16 @@ export default function CustomOrder() {
                     : 'bg-gray-300 cursor-not-allowed'
                 }`}
               >
-                {isButtonEnabled ? 'Order on WhatsApp' : 'Fill details'}
+                {!selectedItems.length
+                  ? 'Select items first'
+                  : !name
+                  ? 'Enter your name'
+                  : !/^\d{10}$/.test(phone)
+                  ? 'Enter valid phone'
+                  : 'Order on WhatsApp'}
               </button>
             </div>
+
           </div>
         </div>
       </div>
