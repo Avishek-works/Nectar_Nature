@@ -9,16 +9,21 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              About Our Juices
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">
+              More Than Juice.
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Made from the freshest organic fruits and vegetables. No added sugars, preservatives, or artificial flavors. 
-              Just pure, natural goodness in every bottle.
+            <h3 className="text-3xl font-bold text-primary-green mb-8">
+              A Health Movement.
+            </h3>
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              Nectar & Nature was born from a simple belief — real nutrition shouldn't come with compromise. We craft every juice fresh, using only premium ingredients, so you get the purest taste and maximum health benefits in every sip.
             </p>
-            <button className="bg-primary-green text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all">
+            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+              No sugar added. No water. No ice. Just pure, unadulterated juice made the moment you order.
+            </p>
+            <a href="https://wa.me/919999999999?text=Tell%20me%20more%20about%20Nectar%20%26%20Nature" className="bg-primary-green text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-600 transition-all inline-block">
               Learn More
-            </button>
+            </a>
           </div>
           <div className="relative">
             <Image
