@@ -40,7 +40,7 @@ export default function Header() {
             className="flex items-center gap-2 text-white font-semibold text-lg hover:opacity-80 transition-opacity"
           >
             <Leaf className="w-6 h-6 text-white" />
-            <span className="font-playfair text-white">Nectar & Nature</span>
+            <span className="font-playfair text-white">Nature Fresh</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -58,7 +58,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <a
-            href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20from%20Nectar%20%26%20Nature"
+            href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20from%20Nature%20Fresh"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center justify-center rounded-full bg-white text-primary px-6 py-3 font-semibold hover:bg-white/90 transition-colors shadow-md"
@@ -102,7 +102,7 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20from%20Nectar%20%26%20Nature"
+                href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20from%20Nature%20Fresh"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}

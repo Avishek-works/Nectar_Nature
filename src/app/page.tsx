@@ -1,6 +1,6 @@
 'use client'
 
-// Force rebuild: Nectar & Nature reference site update
+// Force rebuild: Nature Fresh reference site update
 
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'

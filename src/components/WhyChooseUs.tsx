@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            What sets Nectar & Nature apart from the rest.
+            What sets Nature Fresh apart from the rest.
           </motion.p>
         </motion.div>
 
