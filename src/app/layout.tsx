@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Nectar & Nature | Fresh Indian Juices & Salads',
+  title: 'Nature Fresh | Fresh Indian Juices & Salads',
   description: 'Healthy fresh juices, salads and subscription plans delivered in Pune.',
 }
 

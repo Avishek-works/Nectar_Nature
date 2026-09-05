@@ -42,7 +42,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">N&N</span>
               </div>
-              <span className="font-bold text-xl text-foreground">Nectar & Nature</span>
+              <span className="font-bold text-xl text-foreground">Nature Fresh</span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Pure, fresh juices made with love. No sugar. No water. No ice. Just nature's finest.
@@ -154,7 +154,7 @@ export default function Footer() {
           className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-muted-foreground text-sm">
-            © 2024 Nectar & Nature. Made with ❤️ in Pune.
+            © 2024 Nature Fresh. Made with ❤️ in Pune.
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span>📍 Baner, Pune</span>

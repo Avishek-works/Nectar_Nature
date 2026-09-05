@@ -79,7 +79,7 @@ export default function About() {
 
             {/* TEXT */}
             <p className="text-lg text-muted-foreground">
-              Nectar & Nature was born from a simple belief — real nutrition
+              Nature Fresh was born from a simple belief — real nutrition
               shouldn't come with compromise.
             </p>
 

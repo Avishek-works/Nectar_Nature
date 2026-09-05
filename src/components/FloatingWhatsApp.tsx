@@ -14,7 +14,7 @@ export default function FloatingWhatsApp() {
   if (!isVisible) return null
 
   const link =
-    "https://wa.me/919960083547?text=Hi%2C%20I%20want%20to%20order%20from%20Nectar%20%26%20Nature"
+    "https://wa.me/919960083547?text=Hi%2C%20I%20want%20to%20order%20from%20Nature%20Fresh"
 
   return (
     <motion.div

@@ -89,7 +89,7 @@ export default function Contact() {
 
             {/* CTA */}
             <a
-              href="https://wa.me/919960083547?text=Hi%2C%20I%20have%20a%20question%20about%20Nectar%20%26%20Nature"
+              href="https://wa.me/919960083547?text=Hi%2C%20I%20have%20a%20question%20about%20Nature%20Fresh"
               target="_blank"
               className="block text-center bg-primary text-white py-4 rounded-xl font-semibold shadow-md hover:opacity-90"
             >
